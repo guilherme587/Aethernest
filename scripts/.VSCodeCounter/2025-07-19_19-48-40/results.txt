@@ -1,0 +1,45 @@
+Date : 2025-07-19 19:48:40
+Directory : d:\GODOT 3.6\projetos\dragon_mania\scripts
+Total : 15 files,  2542 codes, 1012 comments, 851 blanks, all 4405 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| GDScript |         15 |      2,542 |      1,012 |        851 |      4,405 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                       | files      | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                          |         15 |      2,542 |      1,012 |        851 |      4,405 |
+| camera                                                                     |          1 |        430 |         76 |        136 |        642 |
+| decoration                                                                 |          3 |        220 |         23 |         75 |        318 |
+| dragon                                                                     |          4 |        868 |        102 |        266 |      1,236 |
+| managers                                                                   |          2 |        324 |         43 |        136 |        503 |
+| ui                                                                         |          4 |        665 |        762 |        233 |      1,660 |
+| utils                                                                      |          1 |         35 |          6 |          5 |         46 |
++----------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                   | language | code       | comment    | blank      | total      |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\camera\CameraController.gd      | GDScript |        430 |         76 |        136 |        642 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\decoration\DecorationCatalog.gd | GDScript |         77 |          3 |         20 |        100 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\decoration\DecorationItem.gd    | GDScript |        110 |         14 |         40 |        164 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\decoration\Tree.gd              | GDScript |         33 |          6 |         15 |         54 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\dragon\Dragon.gd                | GDScript |        192 |         23 |         63 |        278 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\dragon\DragonBehavior.gd        | GDScript |        204 |         33 |         72 |        309 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\dragon\DragonPersonality.gd     | GDScript |        367 |         37 |        100 |        504 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\dragon\DragonStats.gd           | GDScript |        105 |          9 |         31 |        145 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\managers\DecorationManager.gd   | GDScript |        248 |         38 |        101 |        387 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\managers\DragonManager.gd       | GDScript |         76 |          5 |         35 |        116 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\ui\CustomStatusBar.gd           | GDScript |          0 |         54 |          1 |         55 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\ui\DecorationUI.gd              | GDScript |        154 |         26 |         49 |        229 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\ui\DragonInfoUI.gd              | GDScript |        511 |        637 |        182 |      1,330 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\ui\UITheme.gd                   | GDScript |          0 |         45 |          1 |         46 |
+| d:\GODOT 3.6\projetos\dragon_mania\scripts\utils\Enums.gd                  | GDScript |         35 |          6 |          5 |         46 |
+| Total                                                                      |          |      2,542 |      1,012 |        851 |      4,405 |
++----------------------------------------------------------------------------+----------+------------+------------+------------+------------+
