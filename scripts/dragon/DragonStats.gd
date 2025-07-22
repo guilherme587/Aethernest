@@ -1,11 +1,11 @@
-# DragonStats.gd
+# DragonStats.gd - Versão corrigida com método take_damage
 class_name DragonStats
 extends Resource
 
 var Enums = preload("res://scripts/utils/Enums.gd")
 
 export var dragon_name: String = ""
-export var dragon_type: int = 0  # Usar referência numérica em vez de enum direto
+export var dragon_type: int = 0
 
 # Atributos principais
 export var level: int = 1
@@ -128,17 +128,38 @@ func level_up():
 	
 	emit_signal("stats_changed", "level", level)
 
-
-
 func take_damage(damage_amount: float):
-	"""NOVO: Recebe dano"""
+	"""CORRIGIDO: Recebe dano"""
 	
+	var old_health = health
 	health = max(0.0, health - damage_amount)
+	
 	emit_signal("stats_changed", "health", health)
 	
-	print(dragon_name, " recebeu ", int(damage_amount), " de dano. Vida: ", int(health))
+	print(dragon_name, " recebeu ", damage_amount, " de dano. Vida: ", health, "/", max_health)
 	
 	# Se morreu
 	if health <= 0.0:
 		print(dragon_name, " morreu!")
 		# Aqui você pode adicionar lógica de morte
+	
+	# Retorna quanto dano foi realmente aplicado
+	return old_health - health
+
+func heal(heal_amount: float):
+	"""NOVO: Cura o dragão"""
+	
+	health = min(max_health, health + heal_amount)
+	emit_signal("stats_changed", "health", health)
+
+func is_critically_injured() -> bool:
+	"""Verifica se está gravemente ferido"""
+	return health < max_health * 0.25
+
+func is_dead() -> bool:
+	"""Verifica se está morto"""
+	return health <= 0.0
+
+func get_health_percentage() -> float:
+	"""Retorna porcentagem de vida"""
+	return (health / max_health) * 100.0 if max_health > 0 else 0.0

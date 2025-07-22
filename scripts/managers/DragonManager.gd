@@ -106,10 +106,18 @@ func _on_dragon_stats_updated(dragon: Dragon):
 	pass
 
 func remove_dragon(dragon: Dragon):
-	"""Remove dragão"""
+	"""Remove dragão (por morte ou outros motivos)"""
 	
+	print("Removendo dragão: ", dragon.stats.dragon_name if dragon.stats else "Desconhecido")
+	
+	# Se é o dragão selecionado, deseleciona
 	if selected_dragon == dragon:
 		deselect_dragon()
 	
+	# Remove da lista
 	active_dragons.erase(dragon)
+	
+	# Remove da cena
 	dragon.queue_free()
+	
+	print("Dragões restantes: ", active_dragons.size())

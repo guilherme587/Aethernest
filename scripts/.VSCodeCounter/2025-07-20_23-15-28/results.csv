@@ -1,0 +1,23 @@
+"filename", "language", "GDScript", "comment", "blank", "total"
+"d:\GODOT 3.6\projetos\Aethernest\scripts\camera\CameraController.gd", "GDScript", 434, 76, 137, 647
+"d:\GODOT 3.6\projetos\Aethernest\scripts\debug\CombatTester.gd", "GDScript", 38, 5, 17, 60
+"d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\DecorationCatalog.gd", "GDScript", 77, 3, 20, 100
+"d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\DecorationItem.gd", "GDScript", 110, 14, 40, 164
+"d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\Tree.gd", "GDScript", 33, 6, 15, 54
+"d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\Dragon.gd", "GDScript", 233, 33, 83, 349
+"d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonBehavior.gd", "GDScript", 435, 115, 170, 720
+"d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonPersonality.gd", "GDScript", 367, 37, 100, 504
+"d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonProjectile.gd", "GDScript", 234, 37, 93, 364
+"d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonStats.gd", "GDScript", 120, 10, 36, 166
+"d:\GODOT 3.6\projetos\Aethernest\scripts\farm\Farm.gd", "GDScript", 187, 19, 70, 276
+"d:\GODOT 3.6\projetos\Aethernest\scripts\managers\DecorationManager.gd", "GDScript", 399, 32, 157, 588
+"d:\GODOT 3.6\projetos\Aethernest\scripts\managers\DragonManager.gd", "GDScript", 78, 8, 38, 124
+"d:\GODOT 3.6\projetos\Aethernest\scripts\managers\FarmManager.gd", "GDScript", 442, 27, 100, 569
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\CustomStatusBar.gd", "GDScript", 0, 54, 1, 55
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\DecorationUI.gd", "GDScript", 395, 33, 122, 550
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\DragonInfoUI.gd", "GDScript", 518, 656, 185, 1359
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\FarmUI.gd", "GDScript", 261, 40, 87, 388
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\FoodInventoryUI.gd", "GDScript", 240, 26, 71, 337
+"d:\GODOT 3.6\projetos\Aethernest\scripts\ui\UITheme.gd", "GDScript", 0, 45, 1, 46
+"d:\GODOT 3.6\projetos\Aethernest\scripts\utils\Enums.gd", "GDScript", 36, 6, 5, 47
+"Total", "-", 4637, 1282, 1548, 7467

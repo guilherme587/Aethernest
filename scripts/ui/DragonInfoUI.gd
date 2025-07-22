@@ -660,23 +660,23 @@ func add_attribute(name: String, value: String):
 	value_label.add_color_override("font_color", Color.white)
 	attributes_grid.add_child(value_label)
 
-func update_state():
-	"""Atualiza estado atual"""
-
-	var state_name = current_dragon.get_state_name(current_dragon.behavior.current_state)
-	state_label.text = "Estado: " + state_name
-
-	match current_dragon.behavior.current_state:
-		Enums.DragonState.AGGRESSIVE:
-			state_label.add_color_override("font_color", Color.red)
-		Enums.DragonState.RESTING:
-			state_label.add_color_override("font_color", Color.blue)
-		Enums.DragonState.EATING:
-			state_label.add_color_override("font_color", Color.green)
-		Enums.DragonState.SEEKING_FOOD:
-			state_label.add_color_override("font_color", Color.orange)
-		_:
-			state_label.add_color_override("font_color", Color.white)
+#func update_state():
+#	"""Atualiza estado atual"""
+#
+#	var state_name = current_dragon.get_state_name(current_dragon.behavior.current_state)
+#	state_label.text = "Estado: " + state_name
+#
+#	match current_dragon.behavior.current_state:
+#		Enums.DragonState.AGGRESSIVE:
+#			state_label.add_color_override("font_color", Color.red)
+#		Enums.DragonState.RESTING:
+#			state_label.add_color_override("font_color", Color.blue)
+#		Enums.DragonState.EATING:
+#			state_label.add_color_override("font_color", Color.green)
+#		Enums.DragonState.SEEKING_FOOD:
+#			state_label.add_color_override("font_color", Color.orange)
+#		_:
+#			state_label.add_color_override("font_color", Color.white)
 
 func get_dragon_type_color(dragon_type: int) -> Color:
 	"""Retorna cor baseada no tipo do dragão"""
@@ -716,6 +716,35 @@ func _on_dragon_state_changed(new_state: int):
 
 	if visible:
 		update_state()
+
+func update_state():
+	"""Atualiza estado atual"""
+
+	var state_name = current_dragon.get_state_name(current_dragon.behavior.current_state)
+	
+	# Verifica se está com raiva
+	if current_dragon.behavior.is_dragon_angry():
+		var anger_info = current_dragon.behavior.get_anger_info()
+		var time_left = int(anger_info.time_left)
+		state_name += " (FURIOSO - " + str(time_left) + "s restantes)"
+		state_label.add_color_override("font_color", Color.red)
+	else:
+		state_label.text = "Estado: " + state_name
+		
+		# Cor baseada no estado normal
+		match current_dragon.behavior.current_state:
+			Enums.DragonState.AGGRESSIVE:
+				state_label.add_color_override("font_color", Color.orange)
+			Enums.DragonState.RESTING:
+				state_label.add_color_override("font_color", Color.blue)
+			Enums.DragonState.EATING:
+				state_label.add_color_override("font_color", Color.green)
+			Enums.DragonState.SEEKING_FOOD:
+				state_label.add_color_override("font_color", Color.orange)
+			_:
+				state_label.add_color_override("font_color", Color.white)
+	
+	state_label.text = "Estado: " + state_name
 
 
 

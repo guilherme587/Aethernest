@@ -60,6 +60,8 @@ var stable_direction_time: float = 0.0
 var last_movement_direction: Vector2 = Vector2.ZERO
 var is_accelerating: bool = false
 
+export var debug: bool = false
+
 # Cursores personalizados (definidos como constantes)
 enum CursorDirection {
 	DEFAULT,
@@ -95,17 +97,18 @@ func _ready():
 	# Conecta sinal de redimensionamento da tela
 	get_viewport().connect("size_changed", self, "_on_viewport_size_changed")
 	
-	print("CameraController inicializado")
-	print("- Margem das bordas: ", edge_detection_margin * 100, "% (", edge_margin_pixels, "px)")
-	print("- Velocidade base: ", move_speed)
-	print("- Velocidade máxima: ", move_speed * max_speed_multiplier, " (", max_speed_multiplier, "x)")
-	print("- Tempo para vel. máxima: ", time_to_max_speed, "s")
-	print("- Estabilidade direcional: ", direction_stability_time, "s")
-	print("- Zoom min/max: ", min_zoom, " - ", max_zoom)
-	print("- Zoom requer Ctrl: ", require_ctrl_for_zoom)
-	print("- Zoom direcional: ", zoom_towards_mouse)
-	print("- Cursor dinâmico: ", enable_dynamic_cursor)
-	print("- Aceleração: ", enable_acceleration)
+	if debug:
+		print("CameraController inicializado")
+		print("- Margem das bordas: ", edge_detection_margin * 100, "% (", edge_margin_pixels, "px)")
+		print("- Velocidade base: ", move_speed)
+		print("- Velocidade máxima: ", move_speed * max_speed_multiplier, " (", max_speed_multiplier, "x)")
+		print("- Tempo para vel. máxima: ", time_to_max_speed, "s")
+		print("- Estabilidade direcional: ", direction_stability_time, "s")
+		print("- Zoom min/max: ", min_zoom, " - ", max_zoom)
+		print("- Zoom requer Ctrl: ", require_ctrl_for_zoom)
+		print("- Zoom direcional: ", zoom_towards_mouse)
+		print("- Cursor dinâmico: ", enable_dynamic_cursor)
+		print("- Aceleração: ", enable_acceleration)
 
 func _process(delta):
 	"""Atualização principal"""
@@ -465,8 +468,9 @@ func _on_viewport_size_changed():
 	
 	viewport_size = get_viewport().size
 	update_edge_margin()  # Recalcula margem quando a tela muda
-	print("Viewport redimensionada para: ", viewport_size)
-	print("Nova margem: ", edge_detection_margin * 100, "% (", edge_margin_pixels, "px)")
+	if debug:
+		print("Viewport redimensionada para: ", viewport_size)
+		print("Nova margem: ", edge_detection_margin * 100, "% (", edge_margin_pixels, "px)")
 
 # === FUNÇÕES PÚBLICAS PARA CONTROLE EXTERNO ===
 
@@ -563,10 +567,11 @@ func print_camera_info():
 	"""Imprime informações da câmera no console"""
 	
 	var info = get_camera_info()
-	print("=== CAMERA INFO ===")
-	for key in info:
-		print(key, ": ", info[key])
-	print("==================")
+	if debug:
+		print("=== CAMERA INFO ===")
+		for key in info:
+			print(key, ": ", info[key])
+		print("==================")
 
 # === CONFIGURAÇÕES AVANÇADAS ===
 

@@ -10,6 +10,7 @@ script = ExtResource( 2 )
 [node name="DragonManager" parent="." instance=ExtResource( 1 )]
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2( 2, 2 )
 script = ExtResource( 3 )
 
 [node name="CameraTween" type="Camera2D" parent="."]

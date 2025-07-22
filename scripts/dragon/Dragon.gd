@@ -75,12 +75,51 @@ func connect_signals():
 	stats.connect("stats_changed", self, "_on_stats_changed")
 	behavior.connect("state_changed", self, "_on_state_changed")
 	
-	# NOVO: Conecta sinais de decoração
+	# NOVO: Conecta sinais de raiva
+	behavior.connect("dragon_became_angry", self, "_on_dragon_became_angry")
+	behavior.connect("dragon_calmed_down", self, "_on_dragon_calmed_down")
+	
+	# Conecta sinais de decoração
 	if personality:
 		personality.connect("decoration_satisfaction_changed", self, "_on_decoration_satisfaction_changed")
 	
-	# Conecta cliques do mouse
 	connect("input_event", self, "_on_dragon_input")
+
+func _on_dragon_became_angry(dragon_ref):
+	"""Dragão ficou com raiva"""
+	print(stats.dragon_name, " está FURIOSO e vai causar destruição!")
+
+func _on_dragon_calmed_down(dragon_ref):
+	"""Dragão se acalmou"""
+	print(stats.dragon_name, " se acalmou e parou de causar destruição.")
+
+# Adicionar na função get_state_name():
+func get_state_name(state: int) -> String:
+	"""Converte estado para nome legível"""
+	
+	# Se está com raiva, mostra isso no estado
+	if behavior and behavior.is_dragon_angry():
+		return "FURIOSO"
+	
+	match state:
+		Enums.DragonState.WANDERING:
+			return "Vagando"
+		Enums.DragonState.SEEKING_FOOD:
+			return "Procurando comida"
+		Enums.DragonState.EATING:
+			return "Comendo"
+		Enums.DragonState.RESTING:
+			return "Descansando"
+		Enums.DragonState.TERRITORIAL:
+			return "Defendendo território"
+		Enums.DragonState.AGGRESSIVE:
+			return "Agressivo"
+		Enums.DragonState.FLEEING:
+			return "Fugindo"
+		Enums.DragonState.SLEEPING:
+			return "Dormindo"
+		_:
+			return "Desconhecido"
 
 func _process(delta):
 	"""ATUALIZADO: Processa lógica do dragão incluindo decorações"""
@@ -196,29 +235,6 @@ func get_info_text() -> String:
 	
 	return info
 
-func get_state_name(state: int) -> String:
-	"""Converte estado para nome legível"""
-	
-	match state:
-		Enums.DragonState.WANDERING:
-			return "Vagando"
-		Enums.DragonState.SEEKING_FOOD:
-			return "Procurando comida"
-		Enums.DragonState.EATING:
-			return "Comendo"
-		Enums.DragonState.RESTING:
-			return "Descansando"
-		Enums.DragonState.TERRITORIAL:
-			return "Defendendo território"
-		Enums.DragonState.AGGRESSIVE:
-			return "Agressivo"
-		Enums.DragonState.FLEEING:
-			return "Fugindo"
-		Enums.DragonState.SLEEPING:
-			return "Dormindo"
-		_:
-			return "Desconhecido"
-
 func get_stats() -> DragonStats:
 	"""Getter para stats (usado por outros dragões)"""
 	return stats
@@ -275,3 +291,58 @@ func load_dragon_data(data: Dictionary):
 		personality.decoration_satisfaction = personality_data.decoration_satisfaction
 	if personality_data.has("satisfaction_area_radius"):
 		personality.satisfaction_area_radius = personality_data.satisfaction_area_radius
+
+func take_damage(damage_amount: float):
+	"""Recebe dano - Interface para o stats"""
+	
+	if stats:
+		var actual_damage = stats.take_damage(damage_amount)
+		
+		# Efeito visual de dano
+		flash_damage_effect()
+		
+		# Se morreu, remove do jogo
+		if stats.is_dead():
+			die()
+		
+		return actual_damage
+	
+	return 0.0
+
+func flash_damage_effect():
+	"""Efeito visual de dano"""
+	
+	# Pisca em branco por um momento
+	modulate = Color.white
+	
+	# Cria um tween para voltar à cor normal
+	var tween = Tween.new()
+	add_child(tween)
+	tween.interpolate_property(self, "modulate", Color.white, Color.red, 0.2)
+	tween.start()
+	
+	# Remove o tween depois de usar
+	tween.connect("tween_completed", tween, "queue_free")
+
+func die():
+	"""Dragão morre"""
+	
+	print(stats.dragon_name, " morreu e será removido do jogo!")
+	
+	# Remove da lista de dragões ativos
+	var manager = get_parent()
+	if manager.has_method("remove_dragon"):
+		manager.remove_dragon(self)
+	else:
+		queue_free()
+
+func add_impulse(impulse: Vector2):
+	"""NOVO: Adiciona impulso ao dragão (para empurrões)"""
+	
+	# Adiciona o impulso à velocidade atual
+	velocity += impulse
+	
+	# Limita a velocidade máxima
+	var max_impulse_speed = stats.get_effective_speed() * 3
+	if velocity.length() > max_impulse_speed:
+		velocity = velocity.normalized() * max_impulse_speed

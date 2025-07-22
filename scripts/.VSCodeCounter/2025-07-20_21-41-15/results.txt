@@ -1,0 +1,48 @@
+Date : 2025-07-20 21:41:15
+Directory : d:\GODOT 3.6\projetos\Aethernest\scripts
+Total : 17 files,  3285 codes, 1147 comments, 1130 blanks, all 5562 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| GDScript |         17 |      3,285 |      1,147 |      1,130 |      5,562 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                     | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                        |         17 |      3,285 |      1,147 |      1,130 |      5,562 |
+| camera                                                                   |          1 |        434 |         76 |        137 |        647 |
+| debug                                                                    |          1 |         38 |          5 |         17 |         60 |
+| decoration                                                               |          3 |        220 |         23 |         75 |        318 |
+| dragon                                                                   |          5 |      1,389 |        232 |        482 |      2,103 |
+| managers                                                                 |          2 |        354 |         26 |        137 |        517 |
+| ui                                                                       |          4 |        814 |        779 |        277 |      1,870 |
+| utils                                                                    |          1 |         36 |          6 |          5 |         47 |
++--------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                                 | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------+----------+------------+------------+------------+------------+
+| d:\GODOT 3.6\projetos\Aethernest\scripts\camera\CameraController.gd      | GDScript |        434 |         76 |        137 |        647 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\debug\CombatTester.gd           | GDScript |         38 |          5 |         17 |         60 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\DecorationCatalog.gd | GDScript |         77 |          3 |         20 |        100 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\DecorationItem.gd    | GDScript |        110 |         14 |         40 |        164 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\decoration\Tree.gd              | GDScript |         33 |          6 |         15 |         54 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\Dragon.gd                | GDScript |        233 |         33 |         83 |        349 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonBehavior.gd        | GDScript |        435 |        115 |        170 |        720 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonPersonality.gd     | GDScript |        367 |         37 |        100 |        504 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonProjectile.gd      | GDScript |        234 |         37 |         93 |        364 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\dragon\DragonStats.gd           | GDScript |        120 |         10 |         36 |        166 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\managers\DecorationManager.gd   | GDScript |        276 |         18 |         99 |        393 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\managers\DragonManager.gd       | GDScript |         78 |          8 |         38 |        124 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\ui\CustomStatusBar.gd           | GDScript |          0 |         54 |          1 |         55 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\ui\DecorationUI.gd              | GDScript |        296 |         24 |         90 |        410 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\ui\DragonInfoUI.gd              | GDScript |        518 |        656 |        185 |      1,359 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\ui\UITheme.gd                   | GDScript |          0 |         45 |          1 |         46 |
+| d:\GODOT 3.6\projetos\Aethernest\scripts\utils\Enums.gd                  | GDScript |         36 |          6 |          5 |         47 |
+| Total                                                                    |          |      3,285 |      1,147 |      1,130 |      5,562 |
++--------------------------------------------------------------------------+----------+------------+------------+------------+------------+

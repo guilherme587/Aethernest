@@ -21,6 +21,11 @@ func _ready():
 	decoration_manager.name = "DecorationManager"
 	add_child(decoration_manager)
 	
+	# Adiciona o FarmManager
+	var farm_manager = preload("res://scripts/managers/FarmManager.gd").new()
+	farm_manager.name = "farm_manager"
+	add_child(farm_manager)
+	
 	print("Jogo inicializado com modo de decoração")
 	print("Pressione B para ativar/desativar modo decoração")
 

@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "CombatTester",
+"language": "GDScript",
+"path": "res://scripts/debug/CombatTester.gd"
+}, {
 "base": "Resource",
 "class": "DecorationCatalog",
 "language": "GDScript",
@@ -44,17 +49,38 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/dragon/DragonPersonality.gd"
 }, {
+"base": "Area2D",
+"class": "DragonProjectile",
+"language": "GDScript",
+"path": "res://scripts/dragon/DragonProjectile.gd"
+}, {
 "base": "Resource",
 "class": "DragonStats",
 "language": "GDScript",
 "path": "res://scripts/dragon/DragonStats.gd"
 }, {
-"base": "",
-"class": "GitAPI",
-"language": "NativeScript",
-"path": "res://addons/godot-git-plugin/git_api.gdns"
+"base": "StaticBody2D",
+"class": "Farm",
+"language": "GDScript",
+"path": "res://scripts/farm/Farm.gd"
+}, {
+"base": "Node2D",
+"class": "FarmManager",
+"language": "GDScript",
+"path": "res://scripts/managers/FarmManager.gd"
+}, {
+"base": "Control",
+"class": "FarmUI",
+"language": "GDScript",
+"path": "res://scripts/ui/FarmUI.gd"
+}, {
+"base": "Control",
+"class": "FoodInventoryUI",
+"language": "GDScript",
+"path": "res://scripts/ui/FoodInventoryUI.gd"
 } ]
 _global_script_class_icons={
+"CombatTester": "",
 "DecorationCatalog": "",
 "DecorationItem": "",
 "DecorationUI": "",
@@ -62,8 +88,12 @@ _global_script_class_icons={
 "DragonInfoUI": "",
 "DragonManager": "",
 "DragonPersonality": "",
+"DragonProjectile": "",
 "DragonStats": "",
-"GitAPI": ""
+"Farm": "",
+"FarmManager": "",
+"FarmUI": "",
+"FoodInventoryUI": ""
 }
 
 [application]
@@ -71,6 +101,11 @@ _global_script_class_icons={
 config/name="Dragon Mania"
 run/main_scene="res://scenes/Main.tscn"
 config/icon="res://icon.png"
+
+[display]
+
+window/size/test_width=1600
+window/size/test_height=900
 
 [editor]
 
